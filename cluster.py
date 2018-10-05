@@ -26,6 +26,13 @@ def show_cluster_doc(docs, clusters):
     for doc, cls in zip(docs, clusters):
         print(cls, doc)
 
+def write_csv(docs, clusters):
+    pd.DataFrame({
+        'cluster_number': clusters,
+        'documents': docs,
+    }).to_csv('cluster.csv', index=None)
+
 if __name__ == '__main__':
     docs, clusters = get_docs_cluster(sys.argv[1], 5)
     show_cluster_doc(docs, clusters)
+    write_csv(docs, clusters)
