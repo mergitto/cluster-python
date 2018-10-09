@@ -30,9 +30,10 @@ def write_csv(docs, clusters):
     pd.DataFrame({
         'cluster_number': clusters,
         'documents': docs,
-    }).to_csv('cluster.csv', index=None)
+    }).to_csv(sys.argv[3], index=None)
 
 if __name__ == '__main__':
-    docs, clusters = get_docs_cluster(sys.argv[1], 5)
-    show_cluster_doc(docs, clusters)
+    n_clusters = int(sys.argv[1])
+    docs, clusters = get_docs_cluster(sys.argv[2], n_clusters)
     write_csv(docs, clusters)
+    #show_cluster_doc(docs, clusters)

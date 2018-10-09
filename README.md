@@ -3,8 +3,9 @@
 ## 文書のクラスタリング
 分かち書きされた文書を用意
 ```
-python cluster.py wakati.file.name
+python n_clusters cluster.py wakati.file.name
 ```
+n_clusters…クラスタ数
 
 ## 分散表現のクラスタリング
 分散表現モデルを準備(word2vec, Glove, fastTextなどを利用)
